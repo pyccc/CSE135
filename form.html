@@ -21,7 +21,67 @@
 </head>
 
 <body>
+	<form action="/post.php" method="post" class="form-example">
+		<h1>New Form</h1>
+		<div class="form-example">
+		  <label for="name">Username </label>
+		  <input type="text" placeholder="Username (required)" name="name" id="name" required>
+		  <label for="pid">Password: </label>
+		  <input type="password" name="password" id="password" required><br>
+		  <label for="email">Email: </label>
+		  <input type="email" name="email" id="email" required><br>
+		  <label for="dob">Date of birth: </label>
+		  <input type="date" name="dob" id="dob" required><br>
+		  <label for="url">Url: </label>
+		  <input type="url" name="url" id="url" required><br>
+		</div><br>
 
+		<label for="background-select">User type: </label>
+		<select id="background-select">
+			<optgroup label="Type">
+				<option>Type1</option>
+				<option>Type2</option>
+				<option>Type3</option>
+			</optgroup>
+		</select><br>
+
+		<label for="progress">Progrss1:</label>
+		<meter id="progress" min="0" max="100" low="20" high="80" optimum="80" value="30">
+		at 30/100</meter><br><br>
+
+		<label for="topics">Select a topic</label>
+		<input list="topic" id="topics" name="topics" />
+		<datalist id="topic">
+			<option value="topic1">
+			<option value="topic2">
+			<option value="topic3">
+		</datalist><br>
+
+		
+	
+		<label for="progress2">Progress2:</label>
+		<progress id="progress2" max="100" value="80"> 80% </progress><br><br> 
+
+		<fieldset>
+			<legend>Score yourself:</legend>
+		
+			<input type="radio" name="High">
+			<label for="High">10</label><br/>
+			<input type="radio" name="Medium">
+			<label for="Medium">5</label><br/>
+			<input type="radio" name="Low">
+			<label for="Low">1</label>
+		</fieldset><br>
+
+		<label for="story">Others:</label><br>
+		<textarea id="others" name="others" rows="10" cols="50">Others:</textarea><br><br>
+
+		<button type="button">Unused button</button>
+		<div>
+		  <input type="submit" value="Register">
+		</div>
+		
+	</form>
 </body>
 
 <footer class="footer-distributed">
