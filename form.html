@@ -21,17 +21,27 @@
 </head>
 
 <body>
-	<form action="/post.php" method="post" class="form-example">
+	<form action="/post.php" method="post" class="form-example" autocomplete="on">
 		<h1>New Form</h1>
 		<div class="form-example">
 		  <label for="name">Username </label>
-		  <input type="text" placeholder="Username (required)" name="name" id="name" required>
+		  <input type="text" placeholder="Username (required)" name="name" id="name" autofocus required>
+			<label for="name">Read only </label>
+		  <input type="text" placeholder="Read Only" name="name" id="name" readonly>
+			<label for="name">Disabled </label>
+		  <input type="text" placeholder="Disabled" name="name" id="name" disabled>
 		  <label for="pid">Password: </label>
-		  <input type="password" name="password" id="password" required><br>
+		  <input type="password" name="password" id="password" maxlength="12" required><br>
 		  <label for="email">Email: </label>
 		  <input type="email" name="email" id="email" required><br>
 		  <label for="dob">Date of birth: </label>
 		  <input type="date" name="dob" id="dob" required><br>
+			<label for="birthdaytime">Birthday (date and time):</label>
+  <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+			<label for="bdaymonth">Birthday (month and year):</label>
+  <input type="month" id="bdaymonth" name="bdaymonth">
+			<label for="week">Select a week:</label>
+  <input type="week" id="week" name="week">
 		  <label for="url">Url: </label>
 		  <input type="url" name="url" id="url" required><br>
 		</div><br>
@@ -45,10 +55,24 @@
 			</optgroup>
 		</select><br>
 
+		<input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label>
+		<label for="phone">Enter your phone number:</label>
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+
+		<label for="favcolor">Select your favorite color:</label>
+  <input type="color" id="favcolor" name="favcolor">
+		<label for="quantity">Quantity (between 1 and 5):</label>
+  <input type="number" id="quantity" name="quantity" min="1" max="5">
 		<label for="progress">Progrss1:</label>
 		<meter id="progress" min="0" max="100" low="20" high="80" optimum="80" value="30">
 		at 30/100</meter><br><br>
-
+		<label for="appt">Select a time:</label>
+	  	<input type="time" id="appt" name="appt">
 		<label for="topics">Select a topic</label>
 		<input list="topic" id="topics" name="topics" />
 		<datalist id="topic">
@@ -56,8 +80,11 @@
 			<option value="topic2">
 			<option value="topic3">
 		</datalist><br>
+		<input type="hidden" id="custId" name="custId" value="3487">
 
-		
+		<input type="image" src="images/2.png" width="48" height="48">
+		<label for="gsearch">Search Google:</label>
+  <input type="search" id="gsearch" name="gsearch">
 	
 		<label for="progress2">Progress2:</label>
 		<progress id="progress2" max="100" value="80"> 80% </progress><br><br> 
@@ -73,15 +100,36 @@
 			<label for="Low">1</label>
 		</fieldset><br>
 
+		<label for="country_code">Country code(only accept 3 letters):</label>
+  <input type="text" id="country_code" name="country_code"
+  pattern="[A-Za-z]{3}" title="Three letter country code">
+		
 		<label for="story">Others:</label><br>
 		<textarea id="others" name="others" rows="10" cols="50">Others:</textarea><br><br>
 
-		<button type="button">Unused button</button>
+		<label for="files">Select files:</label>
+  <input type="file" id="files" name="files" multiple><br><br>
+		<input type="checkbox" name="vehicle1" value="Bike">
+  <label for="vehicle1"> I have a bike</label><br>
+  <input type="checkbox" name="vehicle2" value="Car">
+  <label for="vehicle2"> I have a car</label><br>
+  <input type="checkbox" name="vehicle3" value="Boat" checked>
+  <label for="vehicle3"> I have a boat</label><br><br>
+		
+		<input type="button">Unused button</input>
 		<div>
 		  <input type="submit" value="Register">
+			<input type="reset" value="Reset">
 		</div>
-		
 	</form>
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+  <input type="range" id="a" value="50">100
+  +<input type="number" id="b" value="50">
+  =<output name="x" for="a b"></output>
+</form>
+	<a href="https://www.w3schools.com/" tabindex="2">W3Schools</a>
+<a href="http://www.google.com/" tabindex="1">Google</a>
+<a href="http://www.microsoft.com/" tabindex="3">Microsoft</a>
 </body>
 
 <footer class="footer-distributed">
